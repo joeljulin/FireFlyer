@@ -1,4 +1,4 @@
-# my_app
+# FireFlyer
 
 A new Flutter project.
 
