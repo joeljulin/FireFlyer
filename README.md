@@ -1,10 +1,12 @@
 # FireFlyer
 
-A new Flutter project.
+Term project for CS1635 to declutter your news
 
-## Getting Started
+### Team 6 Links
 
-This project is a starting point for a Flutter application.
+- [Google Drive](https://drive.google.com/drive/folders/1P3JNR3AlcwgA3WZO7-aKBEHoTynFPju5)
+- [Figma](https://www.figma.com/file/ukjWyvm9vJH9xTKtB6TqWP/Wireframes-and-Storyboards)
+## Starting your development environment
 
 A few resources to get you started if this is your first Flutter project:
 
