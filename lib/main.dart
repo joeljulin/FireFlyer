@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/screens.dart';
 
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -28,34 +27,36 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int currentIndex = 0; // for profile page
-    final screens = [
-      Home(),
-      Profile(),
-      Search(),
-    ];
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-        body: screens[currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: '',
-            ),
-          ],
-          currentIndex: currentIndex,
-          selectedItemColor: Colors.red[400],
-          onTap: (index) => setState(() => currentIndex = index),
-        ),
-      );
-    }
+  final screens = [
+    Home(),
+    Search(),
+    Profile(),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 176, 26, 26),
+      body: screens[currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: '',
+          ),
+        ],
+        currentIndex: currentIndex,
+        selectedItemColor: Color.fromARGB(255, 255, 255, 255),
+        onTap: (index) => setState(() => currentIndex = index),
+        backgroundColor: Color.fromARGB(120, 0, 0, 0),
+      ),
+    );
+  }
 }
