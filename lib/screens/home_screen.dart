@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:FireFlyer/data/data.dart';
+import '../widgets/article_carousel.dart';
 
 class Home extends StatelessWidget {
+  ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,16 +17,22 @@ class Home extends StatelessWidget {
             Color.fromARGB(255, 0, 0, 0)
           ])),
       child: Scaffold(
-          // By defaut, Scaffold background is white
+          // By default, Scaffold background is white
           // Set its value to transparent
           backgroundColor: Colors.transparent,
-          body: Center(
-            child: Container(
-              width: 200,
-              height: 200,
-              color: Colors.transparent,
-            ),
-          )),
+          body: CustomScrollView(
+            controller: _scrollController,
+            slivers: const [
+              SliverToBoxAdapter(
+                child: ArticleCarousel(
+                  key: PageStorageKey('editorsPicks'),
+                  title: 'Editors Picks',
+                  articleList: editorsPicks,
+                ),
+              )
+            ],
+          )
+      )
     );
   }
 }
