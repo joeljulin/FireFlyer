@@ -5,17 +5,11 @@ const Content recentHeader = Content(
   title: 'Jeff',
   imageUrl: '',
   articleUrl: '',
-  description:
-  'test',
+  description: 'test',
 );
 
 const List<Content> previews = [
-  Content(
-    title: '',
-    imageUrl: '',
-    articleUrl: '',
-    description: ''
-  ),
+  Content(title: '', imageUrl: '', articleUrl: '', description: ''),
 ];
 
 const List<Content> editorsPicks = [
@@ -23,18 +17,53 @@ const List<Content> editorsPicks = [
       title: 'How SBF fooled everyone—including me 1',
       imageUrl: Assets.FTX,
       articleUrl: 'Test',
-      description: 'Test'
-  ),
+      description: 'Test'),
   Content(
       title: 'How SBF fooled everyone—including me 2',
       imageUrl: Assets.FTX,
       articleUrl: 'Test',
-      description: 'Test'
-  ),
+      description: 'Test'),
+  Content(
+      title: 'How SBF fooled everyone—including me 1',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
+  Content(
+      title: 'How SBF fooled everyone—including me 2',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
+  Content(
+      title: 'How SBF fooled everyone—including me 1',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
+  Content(
+      title: 'How SBF fooled everyone—including me 2',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
 ];
 
-final List<Content> mostRead = [
+const List<Content> mostRead = [
+  Content(
+      title: 'Men Walk On Moon',
+      imageUrl: Assets.moon,
+      articleUrl: 'Test',
+      description: 'Test'),
+  Content(
+      title: 'How SBF fooled everyone—including me 2',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
 ];
 
-final List<Content> trending = [
+const List<Content> resumeReading = [
+  Content(
+      title: 'Men Walk On Moon',
+      imageUrl: Assets.moon,
+      articleUrl: 'Test',
+      description: 'Test'),
 ];
+
+final List<Content> trending = [];

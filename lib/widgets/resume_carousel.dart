@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:FireFlyer/models/models.dart';
 
-class ArticleCarousel extends StatelessWidget {
-  final String title;
+class ResumeCarousel extends StatelessWidget {
   final List<Content> articleList;
 
-  const ArticleCarousel({
+  const ResumeCarousel({
     required Key key,
-    required this.title,
     required this.articleList,
   }) : super(key: key);
 
@@ -18,17 +16,6 @@ class ArticleCarousel extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
           SizedBox(
             height: 220.0,
             child: ListView.builder(
@@ -41,7 +28,6 @@ class ArticleCarousel extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 final Content content = articleList[index];
                 return GestureDetector(
-                  onTap: () => print(content.title),
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 8.0),
                     height: 175.0,
