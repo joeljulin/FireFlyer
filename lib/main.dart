@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: _title,
       home: MyStatefulWidget(),
+      color: Colors.transparent,
     );
   }
 }
@@ -35,29 +36,34 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 176, 26, 26),
-      body: screens[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
+        extendBody: true,
+        backgroundColor: const Color.fromARGB(212, 0, 0, 0),
+        body: screens[currentIndex],
+        bottomNavigationBar: SizedBox(
+          height: 90,
+          child: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: '',
+              ),
+            ],
+            currentIndex: currentIndex,
+            unselectedItemColor: const Color.fromARGB(255, 126, 126, 126),
+            selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+            onTap: (index) => setState(() => currentIndex = index),
+            backgroundColor: const Color.fromARGB(196, 0, 0, 0),
+            elevation: 0,
+            iconSize: 25,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-          ),
-        ],
-        currentIndex: currentIndex,
-        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
-        onTap: (index) => setState(() => currentIndex = index),
-        backgroundColor: Colors.black.withOpacity(0.5),
-        elevation: 0,
-      ),
-    );
+        ));
   }
 }

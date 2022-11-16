@@ -4,6 +4,8 @@ import '../widgets/article_carousel.dart';
 
 class Search extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
+
+  Search({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,37 +53,9 @@ class Search extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: ArticleCarousel(
-                key: PageStorageKey('mostRead'),
-                title: 'Most Read',
-                articleList: mostRead,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: ArticleCarousel(
-                key: PageStorageKey('mostRead'),
-                title: 'Most Read',
-                articleList: mostRead,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: ArticleCarousel(
-                key: PageStorageKey('mostRead'),
-                title: 'Most Read',
-                articleList: mostRead,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: ArticleCarousel(
-                key: PageStorageKey('mostRead'),
-                title: 'Most Read',
-                articleList: mostRead,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: ArticleCarousel(
-                key: PageStorageKey('mostRead'),
-                title: 'Most Read',
-                articleList: mostRead,
+                key: PageStorageKey('trending'),
+                title: 'Trending',
+                articleList: trending,
               ),
             ),
           ],

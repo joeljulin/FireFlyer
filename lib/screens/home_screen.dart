@@ -7,6 +7,8 @@ import '../widgets/sliver_appbar_delegate.dart';
 class Home extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
 
+  Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,10 +28,10 @@ class Home extends StatelessWidget {
               controller: _scrollController,
               slivers: [
                 SliverPersistentHeader(
-                  floating: true,
+                  floating: false,
                   pinned: true,
                   delegate: SliverAppBarDelegate(
-                    minHeight: 250,
+                    minHeight: 0,
                     maxHeight: 250,
                     child: Container(
                         decoration: const BoxDecoration(
@@ -55,37 +57,9 @@ class Home extends StatelessWidget {
                 ),
                 const SliverToBoxAdapter(
                   child: ArticleCarousel(
-                    key: PageStorageKey('mostRead'),
-                    title: 'Most Read',
-                    articleList: mostRead,
-                  ),
-                ),
-                const SliverToBoxAdapter(
-                  child: ArticleCarousel(
-                    key: PageStorageKey('mostRead'),
-                    title: 'Most Read',
-                    articleList: mostRead,
-                  ),
-                ),
-                const SliverToBoxAdapter(
-                  child: ArticleCarousel(
-                    key: PageStorageKey('mostRead'),
-                    title: 'Most Read',
-                    articleList: mostRead,
-                  ),
-                ),
-                const SliverToBoxAdapter(
-                  child: ArticleCarousel(
-                    key: PageStorageKey('mostRead'),
-                    title: 'Most Read',
-                    articleList: mostRead,
-                  ),
-                ),
-                const SliverToBoxAdapter(
-                  child: ArticleCarousel(
-                    key: PageStorageKey('mostRead'),
-                    title: 'Most Read',
-                    articleList: mostRead,
+                    key: PageStorageKey('trending'),
+                    title: 'Trending',
+                    articleList: trending,
                   ),
                 ),
               ],

@@ -58,4 +58,36 @@ const List<Content> mostRead = [
       description: 'Test'),
 ];
 
-final List<Content> trending = [];
+const List<Content> resumeReading = [
+  Content(
+      title: 'Men Walk On Moon',
+      imageUrl: Assets.moon,
+      articleUrl: 'Test',
+      description: 'Test')
+];
+
+const List<Content> trending = [
+  Content(
+      title: 'How SBF fooled everyone—including me 1',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
+  Content(
+      title: 'How SBF fooled everyone—including me 2',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
+];
+
+const List<Content> favorites = [
+  Content(
+      title: 'How SBF fooled everyone—including me 1',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
+  Content(
+      title: 'How SBF fooled everyone—including me 2',
+      imageUrl: Assets.FTX,
+      articleUrl: 'Test',
+      description: 'Test'),
+];
