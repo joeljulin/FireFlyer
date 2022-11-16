@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:FireFlyer/data/data.dart';
 import '../widgets/article_carousel.dart';
-import '../widgets/resume_carousel.dart';
 import 'package:FireFlyer/assets.dart';
 import '../widgets/sliver_appbar_delegate.dart';
 
 class Home extends StatelessWidget {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +29,12 @@ class Home extends StatelessWidget {
                   floating: true,
                   pinned: true,
                   delegate: SliverAppBarDelegate(
-                    minHeight: 200,
+                    minHeight: 250,
                     maxHeight: 250,
                     child: Container(
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                      image: AssetImage(Assets.FTX),
+                      image: AssetImage(Assets.resume),
                       fit: BoxFit.fill,
                     ))),
                   ),

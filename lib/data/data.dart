@@ -58,12 +58,4 @@ const List<Content> mostRead = [
       description: 'Test'),
 ];
 
-const List<Content> resumeReading = [
-  Content(
-      title: 'Men Walk On Moon',
-      imageUrl: Assets.moon,
-      articleUrl: 'Test',
-      description: 'Test'),
-];
-
 final List<Content> trending = [];

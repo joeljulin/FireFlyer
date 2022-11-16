@@ -35,7 +35,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 176, 26, 26),
+      backgroundColor: const Color.fromARGB(255, 176, 26, 26),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -53,9 +53,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ],
         currentIndex: currentIndex,
-        selectedItemColor: Color.fromARGB(255, 255, 255, 255),
+        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
         onTap: (index) => setState(() => currentIndex = index),
-        backgroundColor: Color.fromARGB(120, 0, 0, 0),
+        backgroundColor: Colors.black.withOpacity(0.5),
+        elevation: 0,
       ),
     );
   }
