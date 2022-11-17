@@ -31,7 +31,7 @@ class ArticleCarousel extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 270,
+            height: 273,
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(
                 vertical: 10.0,
@@ -58,7 +58,7 @@ class ArticleCarousel extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 50,
+                            height: 53,
                             width: 180.0,
                             child: RichText(
                               maxLines: 3,
