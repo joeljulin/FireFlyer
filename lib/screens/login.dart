@@ -54,11 +54,11 @@ class Login extends StatelessWidget {
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromARGB(255, 255, 251, 251),
+                              color: Color.fromARGB(113, 255, 251, 251),
                               width: 1.0)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromARGB(255, 255, 251, 251),
+                              color: Color.fromARGB(113, 255, 251, 251),
                               width: 1.0)),
                       border: OutlineInputBorder(),
                       labelStyle:
@@ -77,11 +77,11 @@ class Login extends StatelessWidget {
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromARGB(255, 255, 251, 251),
+                              color: Color.fromARGB(113, 255, 251, 251),
                               width: 1.0)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromARGB(255, 255, 251, 251),
+                              color: Color.fromARGB(113, 255, 251, 251),
                               width: 1.0)),
                       border: OutlineInputBorder(),
                       labelStyle:
@@ -107,7 +107,7 @@ class Login extends StatelessWidget {
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 115, 115, 115),
+                    color: const Color.fromARGB(165, 115, 115, 115),
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
