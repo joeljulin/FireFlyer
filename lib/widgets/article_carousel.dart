@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:FireFlyer/models/models.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ArticleCarousel extends StatelessWidget {
   final String title;
@@ -22,10 +23,10 @@ class ArticleCarousel extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Text(
               title,
-              style: const TextStyle(
+              style: GoogleFonts.roboto(
                 color: Colors.white,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
               ),
             ),
           ),
@@ -34,7 +35,7 @@ class ArticleCarousel extends StatelessWidget {
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(
                 vertical: 10.0,
-                horizontal: 16.0,
+                horizontal: 10.0,
               ),
               scrollDirection: Axis.horizontal,
               itemCount: articleList.length,

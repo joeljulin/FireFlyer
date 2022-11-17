@@ -2,9 +2,9 @@ import 'package:FireFlyer/models/models.dart';
 import 'package:FireFlyer/assets.dart';
 
 const Content recentHeader = Content(
-  title: 'Jeff',
-  imageUrl: '',
-  articleUrl: '',
+  title: 'This Is Not Ukraine’s Fault’: Tensions Ease Over Missile Strike in Poland',
+  imageUrl: Assets.image4,
+  articleUrl: 'Test',
   description: 'test',
 );
 

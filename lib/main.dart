@@ -40,7 +40,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         backgroundColor: const Color.fromARGB(212, 0, 0, 0),
         body: screens[currentIndex],
         bottomNavigationBar: SizedBox(
-          height: 90,
           child: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -62,7 +61,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             onTap: (index) => setState(() => currentIndex = index),
             backgroundColor: const Color.fromARGB(196, 0, 0, 0),
             elevation: 0,
-            iconSize: 25,
+            iconSize: 30,
           ),
         ));
   }

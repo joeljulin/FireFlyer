@@ -1,3 +1,4 @@
+import 'package:FireFlyer/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:FireFlyer/data/data.dart';
 import '../widgets/article_carousel.dart';
@@ -26,36 +27,28 @@ class Home extends StatelessWidget {
             backgroundColor: Colors.transparent,
             body: CustomScrollView(
               controller: _scrollController,
-              slivers: [
-                SliverPersistentHeader(
-                  floating: false,
-                  pinned: true,
-                  delegate: SliverAppBarDelegate(
-                    minHeight: 0,
-                    maxHeight: 250,
-                    child: Container(
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                      image: AssetImage(Assets.resume),
-                      fit: BoxFit.fill,
-                    ))),
+              slivers: const [ //HomeHeader(featuredContent: recentHeader),
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(0,0,0, 20),
+                    child: HomeHeader(featuredContent: recentHeader),
                   ),
                 ),
-                const SliverToBoxAdapter(
+                SliverToBoxAdapter(
                   child: ArticleCarousel(
                     key: PageStorageKey('editorsPicks'),
-                    title: 'Editors Picks',
+                    title: 'Editor’s Picks',
                     articleList: editorsPicks,
                   ),
                 ),
-                const SliverToBoxAdapter(
+                SliverToBoxAdapter(
                   child: ArticleCarousel(
                     key: PageStorageKey('mostRead'),
                     title: 'Most Read',
                     articleList: mostRead,
                   ),
                 ),
-                const SliverToBoxAdapter(
+                SliverToBoxAdapter(
                   child: ArticleCarousel(
                     key: PageStorageKey('trending'),
                     title: 'Trending',
