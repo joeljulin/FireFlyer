@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../widgets/article_carousel.dart';
 import 'package:FireFlyer/data/data.dart';
 
+import 'login.dart';
+
 class Profile extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
 
@@ -36,14 +38,39 @@ class Profile extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: CustomScrollView(
           controller: _scrollController,
-          slivers: const [
+          slivers: [
             SliverToBoxAdapter(
-              child: ArticleCarousel(
+                // ignore: prefer_const_literals_to_create_immutables
+                child: Column(children: [
+              const ArticleCarousel(
                 key: PageStorageKey('favorites'),
                 title: 'Favorites',
                 articleList: favorites,
               ),
-            ),
+              Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15.0, right: 15.0, top: 200, bottom: 0),
+                  child: Container(
+                    height: 50,
+                    width: 350,
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(165, 115, 115, 115),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => Login()));
+                      },
+                      child: const Text(
+                        'Sign Out',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  )),
+            ])),
           ],
         ),
         // By defaut, Scaffold background is white
