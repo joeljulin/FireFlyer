@@ -7,7 +7,8 @@ Term project for CS1635 to declutter your news
 - [Google Drive](https://drive.google.com/drive/folders/1P3JNR3AlcwgA3WZO7-aKBEHoTynFPju5)
 - [Figma](https://www.figma.com/file/ukjWyvm9vJH9xTKtB6TqWP/Wireframes-and-Storyboards)
 
-## Software Execution Steps: How to start the app (MacOS):
+## Software Execution Steps
+> How to start the app (MacOS):
 
 1) Clone repository.
 
