@@ -12,7 +12,7 @@ Term project for CS1635 to declutter your news
 
 1) Clone repository.
 
-2) Double-check you are in the `/FireFlyer` directory.
+2) Go into the `/FireFlyer` directory with `cd Fireflyer`
 
 3) Run below CLI commands
 ```bash
