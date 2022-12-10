@@ -19,18 +19,34 @@ class Search extends StatelessWidget {
           ])),
       child: Scaffold(
         appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(50.0),
-            child: AppBar(
-              leading: IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.keyboard)),
-              title: const Text('What are you looking for?',
-                  style: TextStyle(
-                      fontSize: 18, color: Color.fromARGB(255, 234, 231, 231))),
-              backgroundColor: const Color.fromARGB(32, 149, 149, 149),
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-              ),
-            )),
+            preferredSize: const Size.fromHeight(70),
+            child: Container(
+                margin: const EdgeInsets.only(
+                    top: 60, bottom: 0, left: 30, right: 30),
+                height: 50,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(32, 149, 149, 149),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Align(
+                  alignment: Alignment.center,
+                  child: TextField(
+                    cursorColor: Colors.white,
+                    textAlignVertical: TextAlignVertical(y: 0),
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w600),
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'What are you looking for?',
+                        alignLabelWithHint: true,
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        prefixIcon: Icon(Icons.keyboard, color: Colors.white),
+                        fillColor: Colors.transparent),
+                  ),
+                ))),
         // By default, Scaffold background is white
         // Set its value to transparent
         backgroundColor: Colors.transparent,
@@ -60,9 +76,6 @@ class Search extends StatelessWidget {
             ),
           ],
         ),
-        // By defaut, Scaffold background is white
-        // Set its value to transparent
-        // backgroundColor: Colors.transparent
       ),
     );
   }
