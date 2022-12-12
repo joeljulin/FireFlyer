@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/article_carousel.dart';
 import 'package:FireFlyer/data/data.dart';
 
-import 'login.dart';
+import 'login_screen.dart';
 
 class Profile extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
@@ -59,7 +59,7 @@ class Profile extends StatelessWidget {
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => Login()));
+                            MaterialPageRoute(builder: (_) => LoginScreen()));
                       },
                       child: const Text(
                         'Sign Out',
