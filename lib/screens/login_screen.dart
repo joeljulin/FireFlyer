@@ -36,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
       } else {
         userCredential = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
+        userCredential.user?.updateDisplayName(userName);
       }
     } on PlatformException catch (err) {
       String? message = "An error occured please check your credentails";
@@ -65,7 +66,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: AuthForm(_submitAuthForm, _isLoading),
     );
   }

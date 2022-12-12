@@ -125,7 +125,7 @@ class _AuthFormState extends State<AuthForm> {
                             TextFormField(
                               key: const ValueKey('username'),
                               decoration: const InputDecoration(
-                                  labelText: 'USERNAME',
+                                  labelText: 'NAME',
                                   labelStyle: TextStyle(
                                       fontFamily: 'RobotoCondensed',
                                       fontWeight: FontWeight.bold,
