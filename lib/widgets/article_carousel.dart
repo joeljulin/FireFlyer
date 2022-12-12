@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:FireFlyer/models/models.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:FireFlyer/screens/selected_article.dart';
+
 class ArticleCarousel extends StatelessWidget {
   final String title;
   final List<Content> articleList;
@@ -42,7 +44,10 @@ class ArticleCarousel extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 final Content content = articleList[index];
                 return GestureDetector(
-                    onTap: () => print(content.title),
+                    onTap: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => SelectedArticle(articleList[index])));
+                    },
                     child: Container(
                       child: Column(
                         children: [

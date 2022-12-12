@@ -3,6 +3,8 @@ import 'package:FireFlyer/widgets/widgets.dart';
 
 import '../models/content.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class HomeHeader extends StatelessWidget {
   final Content featuredContent;
 
@@ -68,7 +70,14 @@ class HomeHeader extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                 ),
-                onPressed: () {},
+                // launches the url of the article in app
+                onPressed: () async {
+                  if(await canLaunch(featuredContent.articleUrl)){
+                    await launch(featuredContent.articleUrl);
+                  }else {
+                    throw 'Could not launch';
+                  }
+                },
                 child: const Text('Resume'),
               )
             ],
