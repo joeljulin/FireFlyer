@@ -36,8 +36,18 @@ class _LoginScreenState extends State<LoginScreen> {
         userCredential = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
 
-        await userCredential.user!.reload();
-        await userCredential.user!.updateDisplayName(userName);
+        User? user = userCredential.user;
+
+        if (user != null) {
+          //add display name for just created user
+          user.updateDisplayName(userName);
+          //get updated user
+          await user.reload();
+          user = _auth.currentUser;
+          //print final version to console
+          print("Registered user:");
+          print(user);
+        }
 
       }
 
