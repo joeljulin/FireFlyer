@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "806979149019",
+    "project_id": "fireflyer-7d599",
+    "storage_bucket": "fireflyer-7d599.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806979149019:android:2967580e2434147036c0fe",
+        "android_client_info": {
+          "package_name": "com.example.my_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806979149019-n2ft7ftv2cej10n9icbmnvjvdneaf9k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAij98xqFKTujNS5fN5mXVkfp_wuWRst9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806979149019-n2ft7ftv2cej10n9icbmnvjvdneaf9k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
