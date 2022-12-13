@@ -36,10 +36,11 @@ class _LoginScreenState extends State<LoginScreen> {
       } else {
         userCredential = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
-        userCredential.user?.updateDisplayName(userName);
+        await FirebaseAuth.instance.currentUser?.updateDisplayName(userName);
       }
+
     } on PlatformException catch (err) {
-      String? message = "An error occured please check your credentails";
+      String? message = "An error occurred please check your credentials";
 
       if (err.message != null) {
         message = err.message;
