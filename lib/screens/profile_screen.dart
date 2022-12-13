@@ -1,11 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import '../widgets/article_carousel.dart';
 import 'package:FireFlyer/data/data.dart';
-
-import 'login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'login_screen.dart';
 
 class Profile extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
+  final user = FirebaseAuth.instance.currentUser!;
 
   Profile({super.key});
   @override
@@ -26,8 +28,8 @@ class Profile extends StatelessWidget {
               elevation: 0,
               automaticallyImplyLeading: false,
               leadingWidth: 400,
-              leading: const Text(('  Profile'),
-                  style: TextStyle(
+              leading: Text((user.displayName!),
+                  style: const TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.w700,
                       color: Color.fromARGB(255, 234, 231, 231))),
@@ -58,8 +60,7 @@ class Profile extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => Login()));
+                        FirebaseAuth.instance.signOut();
                       },
                       child: const Text(
                         'Sign Out',
