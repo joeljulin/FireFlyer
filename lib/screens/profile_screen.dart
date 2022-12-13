@@ -32,16 +32,35 @@ class Profile extends StatelessWidget {
                   icon: const Icon(Icons.account_circle, size: 50),
                 ),
               ),
-              title: RichText(
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                text: TextSpan(
-                  style: const TextStyle(
-                      fontSize: 24.0,
-                      color: Color.fromARGB(255, 234, 231, 231),
-                      fontWeight: FontWeight.w700),
-                  text: user.displayName
-                ),
+              title: Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RichText(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                        style: const TextStyle(
+                            fontSize: 24.0,
+                            color: Color.fromARGB(255, 234, 231, 231),
+                            fontWeight: FontWeight.w700),
+                        text: user.displayName,
+                      ),
+                    ),
+                    RichText(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                          style: const TextStyle(
+                              fontSize: 12.0,
+                              color: Color.fromARGB(255, 234, 231, 231),
+                              fontWeight: FontWeight.w300),
+                        text: user.email
+                      ),
+                    )
+                  ],
+                )
               ),
               backgroundColor: const Color.fromARGB(0, 149, 149, 149),
             )),
