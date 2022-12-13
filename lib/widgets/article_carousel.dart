@@ -62,20 +62,23 @@ class ArticleCarousel extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 53,
-                            width: 180.0,
-                            child: RichText(
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                              strutStyle: const StrutStyle(
-                                  fontSize: 15.0, fontWeight: FontWeight.bold),
-                              text: TextSpan(
-                                style: const TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300),
-                                text: content.title,
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: SizedBox(
+                              height: 45,
+                              width: 180.0,
+                              child: RichText(
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                strutStyle: const StrutStyle(
+                                    fontSize: 15.0, fontWeight: FontWeight.bold),
+                                text: TextSpan(
+                                  style: const TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300),
+                                  text: content.title,
+                                ),
                               ),
                             ),
                           ),

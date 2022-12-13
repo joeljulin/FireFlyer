@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../main.dart';
 import '../widgets/auth_form.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -36,7 +35,20 @@ class _LoginScreenState extends State<LoginScreen> {
       } else {
         userCredential = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
-        await FirebaseAuth.instance.currentUser?.updateDisplayName(userName);
+
+        User? user = userCredential.user;
+
+        if (user != null) {
+          //add display name for just created user
+          user.updateDisplayName(userName);
+          //get updated user
+          await user.reload();
+          user = _auth.currentUser;
+          //print final version to console
+          print("Registered user:");
+          print(user);
+        }
+
       }
 
     } on PlatformException catch (err) {
@@ -62,7 +74,6 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     }
   }
-
 
   @override
   Widget build(BuildContext context) {

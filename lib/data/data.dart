@@ -18,7 +18,7 @@ const List<Content> editorsPicks = [
       title: 'How SBF fooled everyone—including me',
       imageUrl: Assets.FTX,
       articleUrl: 'https://fortune.com/crypto/2022/11/14/how-sbf-fooled-everyone-including-me/',
-      description: 'Test'),
+      description: 'The lesson here for me and others is the old adage “trust but verify.” I should have pushed SBF and his company harder to show me documents proving FTX was what he said it was, and not assumed that the likes of Sequoia would never back a house of cards. Finally, in business as in life, beware of messiah figures. This caution extends to the crypto community that, time and time again, rushes to build cults around leaders rather than to stay true to blockchain’s core ideal of decentralization.'),
   Content(
       title: 'Nancy Pelosi stands down as leader of US House Democrats',
       imageUrl: Assets.pelosi,
