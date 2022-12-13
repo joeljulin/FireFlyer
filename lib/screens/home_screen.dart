@@ -18,8 +18,8 @@ class Home extends StatelessWidget {
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
                 colors: [
-              Color.fromARGB(255, 176, 69, 39),
-              Color.fromARGB(255, 0, 0, 0)
+                  Color.fromARGB(255, 0, 0, 0),
+                  Color.fromARGB(255, 50, 14, 8)
             ])),
         child: Scaffold(
             // By default, Scaffold background is white

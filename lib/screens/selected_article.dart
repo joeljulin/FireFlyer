@@ -15,10 +15,10 @@ class SelectedArticle extends StatelessWidget {
       decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.bottomCenter,
-              end: Alignment(0,0.5),
+              end: Alignment.topCenter,
               colors: [
-            Color.fromARGB(255, 176, 69, 39),
-            Color.fromARGB(255, 0, 0, 0)
+                Color.fromARGB(255, 0, 0, 0),
+                Color.fromARGB(255, 50, 14, 8)
           ])),
       child: Scaffold(
         // By defaut, Scaffold background is white
@@ -27,7 +27,7 @@ class SelectedArticle extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 15),
+              margin: EdgeInsets.only(bottom: 5),
               height: MediaQuery.of(context).size.height / 1.5,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -37,7 +37,7 @@ class SelectedArticle extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 15, bottom: 15),
+              margin: EdgeInsets.only(top: 25),
               child: (
                 SizedBox(
                   height: 86,
@@ -57,52 +57,70 @@ class SelectedArticle extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
-              child: Row (
-                children: <Widget> [
-                  Container(
-                    margin: EdgeInsets.only(left: 20, right: 75),
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        textStyle: const TextStyle(fontSize: 16),
-                        backgroundColor: Colors.grey.withOpacity(0.75),
-                        minimumSize: const Size(85, 40),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
+              child: (
+                  SizedBox(
+                    height: 86,
+                    width: MediaQuery.of(context).size.width / 1.1,
+                    child: RichText(
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                        style: const TextStyle(
+                            fontSize: 20.0,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontWeight: FontWeight.w400),
+                        text: tapped_content.description,
                       ),
-                      // launches the url of the article in app
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const MyStatefulWidget()));
-                      },
-                      child: const Text('< Back'),
-                    )
+                    ),
+                  )
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Row (
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget> [
+                  TextButton.icon(
+                    icon: const Icon(Icons.first_page, color: Colors.white ),
+                    label: const Text('View other articles'),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      foregroundColor: Colors.white,
+                      textStyle: const TextStyle(fontSize: 16),
+                      backgroundColor: Colors.grey.withOpacity(0.75),
+                      minimumSize: const Size(85, 40),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    // launches the url of the article in app
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const MyStatefulWidget()));
+                    },
                   ),
     
-                  Container(
-                    margin: EdgeInsets.only(left: 90, right: 20),
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        textStyle: const TextStyle(fontSize: 16),
-                        backgroundColor: Colors.blue.withOpacity(0.75),
-                        minimumSize: const Size(85, 40),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                      // launches the url of the article in app
-                      onPressed: () async {
-                        if(await canLaunch(tapped_content.articleUrl)){
-                          await launch(tapped_content.articleUrl);
-                        }else {
-                          throw 'Could not launch';
-                        }
-                      },
-                      child: const Text('Read >'),
+                  TextButton.icon(
+                    icon: const Icon(Icons.read_more, color: Colors.white ),
+                    label: const Text('Read'),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      foregroundColor: Colors.white,
+                      textStyle: const TextStyle(fontSize: 16),
+                      backgroundColor: Colors.blue.withOpacity(0.75),
+                      minimumSize: const Size(85, 40),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                     ),
+                    // launches the url of the article in app
+                    onPressed: () async {
+                      if(await canLaunch(tapped_content.articleUrl)){
+                        await launch(tapped_content.articleUrl);
+                      }else {
+                        throw 'Could not launch';
+                      }
+                    },
                   ),
                 ],
               )

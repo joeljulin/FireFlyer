@@ -1,9 +1,7 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import '../widgets/article_carousel.dart';
 import 'package:FireFlyer/data/data.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'login_screen.dart';
 
 class Profile extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
@@ -18,21 +16,33 @@ class Profile extends StatelessWidget {
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
               colors: [
-            Color.fromARGB(255, 176, 69, 39),
-            Color.fromARGB(255, 0, 0, 0)
+                Color.fromARGB(255, 0, 0, 0),
+                Color.fromARGB(255, 50, 14, 8)
           ])),
       child: Scaffold(
         appBar: PreferredSize(
             preferredSize: const Size.fromHeight(70.0),
             child: AppBar(
               elevation: 0,
-              automaticallyImplyLeading: false,
-              leadingWidth: 400,
-              leading: Text((user.displayName!),
+              centerTitle: false,
+              leading: Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.account_circle, size: 50),
+                ),
+              ),
+              title: RichText(
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                text: TextSpan(
                   style: const TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w700,
-                      color: Color.fromARGB(255, 234, 231, 231))),
+                      fontSize: 24.0,
+                      color: Color.fromARGB(255, 234, 231, 231),
+                      fontWeight: FontWeight.w700),
+                  text: user.displayName
+                ),
+              ),
               backgroundColor: const Color.fromARGB(0, 149, 149, 149),
             )),
         // By default, Scaffold background is white
@@ -51,7 +61,7 @@ class Profile extends StatelessWidget {
               ),
               Padding(
                   padding: const EdgeInsets.only(
-                      left: 15.0, right: 15.0, top: 200, bottom: 0),
+                      left: 10, right: 10, top: 200, bottom: 0),
                   child: Container(
                     height: 50,
                     width: 350,
